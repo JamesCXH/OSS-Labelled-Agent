@@ -1,0 +1,9 @@
+Here's the input data:
+{
+  "old_accessibility_tree": "$old_accessibility_tree",
+  "new_accessibility_tree": "$new_accessibility_tree",
+  "intention_for_action": "$reason_for_action",
+  "web_agent_task": "$web_agent_task",
+}
+
+Think VERY HARD using chain-of-thought for EVERY STEP.

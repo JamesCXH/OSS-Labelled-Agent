@@ -1,0 +1,436 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DomBot</title>
+    <link rel="icon" href="/static/trydombotfavicon.jpeg" type="image/jpeg">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap");
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .browser-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 10px;
+      }
+      .screenshot-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #browser-view {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border: none;
+      }
+      .placeholder-text {
+        font-family: "Futura", sans-serif;
+        font-size: 24px;
+        color: #0b648f;
+        text-align: center;
+      }
+      #start-button {
+        font-family: "Futura", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 15px 30px;
+        background-color: #e21737;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .chat-container {
+        height: 300px;
+        background-color: white;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+      }
+      .messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      .message {
+        margin-bottom: 8px;
+        border-radius: 5px;
+        max-width: 70%;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        padding: 6px 10px;
+      }
+      .message-content {
+        padding: 2px 0;
+      }
+      .user-message {
+        background-color: #e21737;
+        color: white;
+        align-self: flex-end;
+        text-align: right;
+      }
+      .agent-message {
+        background-color: #0b648f;
+        color: white;
+        align-self: flex-start;
+        text-align: left;
+      }
+      .only-out-message {
+        background-color: #3d9ad1;
+        color: white;
+        font-style: italic;
+        align-self: center;
+        text-align: center;
+        max-width: 90%;
+      }
+      /* **New Style for exit-message** */
+      .exit-message {
+        background-color: #28a745; /* Green color */
+        color: white;
+        align-self: center;
+        text-align: center;
+        max-width: 90%;
+        font-style: normal; /* Remove italic if present */
+        border-radius: 5px;
+        padding: 6px 10px;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      .input-container {
+        display: flex;
+        padding: 10px;
+      }
+      input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #e21737;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .thinking {
+        align-self: center;
+        color: #0b648f;
+        font-style: italic;
+      }
+      .thinking::after {
+        content: ".";
+        animation: thinking 1.5s infinite;
+      }
+      @keyframes thinking {
+        0% {
+          content: ".";
+        }
+        33% {
+          content: "..";
+        }
+        66% {
+          content: "...";
+        }
+      }
+      /* New style for reset button */
+      #reset-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-family: "Futura", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: crimson;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pass the key to JavaScript -->
+    <script>
+      const KEY = "{{ key }}";
+    </script>
+    <div id="app">
+      <div class="browser-container">
+        {% raw %}
+        <div class="screenshot-wrapper" v-if="agentStarted">
+          <img
+            v-if="hasScreenshot"
+            id="browser-view"
+            :src="browserScreenshot"
+            alt="Starting..."
+          />
+          <div v-else class="placeholder-text">Starting...</div>
+        </div>
+        <button id="start-button" v-if="!agentStarted" @click="startAgent">
+          Start
+        </button>
+        <button id="reset-button" v-if="agentStarted" @click="resetAgent">
+          Reset
+        </button>
+        {% endraw %}
+      </div>
+      <div class="chat-container">
+        <div class="messages" ref="chatMessages">
+          {% raw %}
+          <div
+            v-for="message in messages"
+            :class="['message', message.type + '-message']"
+          >
+            <div class="message-content">{{ message.text }}</div>
+          </div>
+          <div v-if="showThinking" class="thinking">thinking</div>
+          {% endraw %}
+        </div>
+        <div class="input-container" v-if="waitingForUserInput">
+          <input
+            v-model="inputMessage"
+            @keyup.enter="sendResponse"
+            placeholder="Type your response..."
+          />
+          <button @click="sendResponse">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          messages: [],
+          inputMessage: "",
+          socket: null,
+          browserScreenshot: "",
+          waitingForUserInput: false,
+          agentStarted: false,
+          hasScreenshot: false,
+          agentActive: false,
+          isAtBottom: true,
+        },
+        computed: {
+          showThinking() {
+            return this.agentActive && !this.waitingForUserInput;
+          },
+        },
+        created() {
+          // Initialize Socket.IO with the key as a query parameter
+          this.socket = io("/", {
+            query: "key=" + KEY,
+            transports: ["websocket"],
+          });
+
+          // Handle connection response
+          this.socket.on("connection_response", (data) => {
+            if (data.status === "invalid_key") {
+              alert("Invalid key. Please use a valid key.");
+              // Optionally, redirect or hide content
+              this.$el.innerHTML =
+                '<div style="display:flex; justify-content:center; align-items:center; height:100vh; font-size:24px; color:red;">Please use a valid key.</div>';
+            } else if (data.status === "connected") {
+              // Connected successfully
+            }
+          });
+
+          // Handle agent questions
+          this.socket.on("agent_question", (data) => {
+            this.messages.push({ type: "agent", text: data.question });
+            this.waitingForUserInput = true;
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle browser updates
+          this.socket.on("browser_update", (data) => {
+            this.browserScreenshot =
+              "data:image/jpeg;base64," + data.screenshot;
+            this.hasScreenshot = true;
+          });
+
+          // Handle agent-only messages
+          this.socket.on("agent_only_out", (data) => {
+            this.messages.push({ type: "only-out", text: data.message });
+            this.scrollToBottomIfNeeded();
+          });
+
+          // **Handle agent_exit_message**
+          this.socket.on("agent_exit_message", (data) => {
+            this.messages.push({ type: "exit", text: data.message });
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle user messages from other clients
+          this.socket.on("user_message", (data) => {
+            this.messages.push({ type: "user", text: data.text });
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle agent start
+          this.socket.on("agent_started", (data) => {
+            this.agentStarted = true;
+            this.agentActive = true;
+          });
+
+          // Handle agent stop
+          this.socket.on("agent_stopped", () => {
+            this.agentActive = false;
+            // Optionally, notify the user that the agent has stopped
+            // this.messages.push({
+            //   type: "only-out",
+            //   text: "Agent has stopped itself.",
+            // });
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle agent reset
+          this.socket.on("agent_reset", (data) => {
+            if (data.reason !== "agent_stopped") {
+              this.clearInterface();
+            }
+            // Optionally, handle 'agent_stopped' case if needed
+          });
+
+          // Handle agent state (for new connections)
+          this.socket.on("agent_state", (data) => {
+            this.messages = data.messages;
+            this.browserScreenshot = data.browserScreenshot
+              ? "data:image/jpeg;base64," + data.browserScreenshot
+              : "";
+            this.hasScreenshot = !!data.browserScreenshot;
+            // Determine if the agent is active based on messages or screenshot
+            this.agentStarted = this.messages.length > 0 || this.hasScreenshot;
+            this.waitingForUserInput = data.waiting_for_input;
+            this.agentActive = this.waitingForUserInput || this.agentActive;
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle agent already running
+          this.socket.on("agent_already_running", (data) => {
+            this.agentStarted = true;
+            this.agentActive = true;
+            this.messages.push({
+              type: "only-out",
+              text: "Agent is already running.",
+            });
+            this.scrollToBottomIfNeeded();
+          });
+
+          // Handle input disabled event
+          this.socket.on("input_disabled", (data) => {
+            this.waitingForUserInput = false;
+          });
+
+          // Handle errors
+          this.socket.on("error", (data) => {
+            console.error(data.message);
+            // Optionally, display error to the user
+          });
+        },
+        methods: {
+          startAgent() {
+            this.socket.emit("start_agent");
+          },
+          sendResponse() {
+            if (this.inputMessage.trim() !== "") {
+              // Append the message locally
+              this.messages.push({ type: "user", text: this.inputMessage });
+              // Emit the user response to the server
+              this.socket.emit("user_response", {
+                response: this.inputMessage,
+              });
+              // Clear the input field
+              this.inputMessage = "";
+              // Update waiting state
+              this.waitingForUserInput = false;
+              this.scrollToBottomIfNeeded();
+            }
+          },
+          isScrolledToBottom() {
+            const element = this.$refs.chatMessages;
+            return (
+              element.scrollHeight - element.scrollTop === element.clientHeight
+            );
+          },
+          scrollToBottom() {
+            this.$nextTick(() => {
+              const element = this.$refs.chatMessages;
+              element.scrollTop = element.scrollHeight;
+            });
+          },
+          scrollToBottomIfNeeded() {
+            if (this.isAtBottom) {
+              this.scrollToBottom();
+            }
+          },
+          // Method to reset the agent
+          resetAgent() {
+            this.socket.emit("reset_agent");
+            this.clearInterface();
+          },
+          // Method to clear chat and image
+          clearInterface() {
+            this.messages = [];
+            this.browserScreenshot = "";
+            this.hasScreenshot = false;
+            this.waitingForUserInput = false;
+            this.agentStarted = false;
+            this.agentActive = false;
+          },
+        },
+        watch: {
+          messages() {
+            this.$nextTick(() => {
+              this.isAtBottom = this.isScrolledToBottom();
+            });
+          },
+        },
+        mounted() {
+          const element = this.$refs.chatMessages;
+          element.addEventListener("scroll", () => {
+            this.isAtBottom = this.isScrolledToBottom();
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+Here's the accessibility tree of the current web page:
+
+<accessibility_tree>
+$ax_tree
+</accessibility_tree>
+
+Your task is:
+<task>
+$task
+</task>
+
+Here's the memory of actions you've taken so far, as well as questions you've asked the user:
+<action_memory>
+$action_memory
+</action_memory>
+
+Think VERY HARD using chain-of-thought for EVERY STEP.

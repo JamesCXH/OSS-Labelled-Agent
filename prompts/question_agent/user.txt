@@ -1,0 +1,22 @@
+Here's the accessibility tree of the current web page:
+<accessibility_tree>
+$ax_tree
+</accessibility_tree>
+Actions in the tree are marked with "[x]", x being an integer, at the start of their lines.
+
+The User's Task:
+<task>
+$task
+</task>
+
+Information that has already been collected:
+<task_notes>
+$task_notes
+</task_notes>
+
+What you need to ask questions about:
+<question_intent>
+$question_intent
+</question_intent>
+
+Remember to reason very hard for every step in the instructions.

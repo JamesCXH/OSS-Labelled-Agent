@@ -1,0 +1,19 @@
+Here is the task:
+<task>
+$task
+</task>
+
+Here is the accessibility tree that the actions will be executed on:
+<ax_tree>
+$ax_tree 
+</ax_tree>
+
+Here are the actions that have already been performed:
+<action_memory>
+$action_memory
+</action_memory>
+
+Finally here is the generated plan that you must prune. 
+<actions>
+$actions
+</actions>

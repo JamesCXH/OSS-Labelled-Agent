@@ -1,0 +1,81 @@
+Here's the accessibility tree of the current web page:
+<accessibility_tree>
+$ax_tree
+</accessibility_tree>
+
+Your task is:
+<task>
+$task
+</task>
+
+Here's the memory of previous summarized actions:
+<world_memory>
+$world_memory
+</world_memory>
+
+Here's the memory of actions you've taken so far that haven't been summarized, these were performed AFTER the last time world_memory was updated:
+<action_memory>
+$action_memory
+</action_memory>
+
+Important info about the website:
+<important_info>
+$context
+<\important_info>
+
+Answer this set of questions (1-5) sequentially:
+
+1. Break down the task, and list out everything that the user desires individually to help you determine what is task-relevant:
+  - 'Task-relevant' information means that the information explicitly matches or is implied by information in web_agent_task.
+  - The task itself may contain multiple specifications, you must break these down and list them out separately.
+  - Break down every individual desire/specification found in the task to individual pieces.
+
+2. Analyze the web accessibility_tree:
+   - Examine the text inside {} carefully for each line. These may help hint at what that action in the accessibility is supposed to generally do.
+   - Note any relevant elements or actions available on the accessibility_tree.
+
+3. Reason about all task-relevant tasks, action_memory, world_memory, and important_info:
+   - The world_memory describes all task relevant information, it was last updated before action_memory was recorded.
+   - You have an understanding about what is task-relevant from question 1.
+   - Reason about your action_memory and world_memory to determine what has already been completed and attempted on this website.
+   - Review your task, then determine what still needs to be completed.
+   - Assume that the important info is relevant to your task.
+       - Important info helps you understand the intention of the user and how the website works.
+       - Use the important_info to inform your decision-making.
+
+4. Choose the next action:
+   - First list out every next possible action on the accessibility_tree that is task-relevant (relates to a user desire).
+       - You got user desires in question 1.
+       - Consider how each individual action on the accessibility_tree will help you progress towards completing your task.
+       - Consider how each action fits into what you've already done in world_memory and action_memory.
+   - Then choose the best next action.
+       - Ensure that you fully complete the process of attaining what the user wants (i.e., you must complete the entire checkout order to buy something). Assume that you have access to all the user's personal information.
+       - Be careful not to visit somewhere which is known to be unhelpful, these will be recorded in world_memory and action_memory.
+
+5. Provide your decision:
+   - Following your reasoning from question 4, choose the next action that you want to perform.
+   - Use the following Python function format to indicate your chosen action:
+     choose(action_number: int, action_reason: str)
+   - action_number: The number of the action you've chosen from the accessibility tree.
+   - action_reason: One brief sentence reason of why you chose that action (e.g., to navigate, because needed option isn't available, current page is a dead end for task, to input information for payment.etc)
+       - The action_reason should be the next immediate reason that the action was being performed, and not multiple future reasons.
+   - For example:
+     choose(42, "Current page for Specialty Pizzas doesn't contain Magic Pizza, navigating to Menu where Magic Pizza may appear")
+
+
+Note:
+- Every action in the accessibility tree is labeled with a number at the start of the line.
+- Some actions have the text SPECIAL ACTION after their number, pay attention to these and choose them when appropriate. These are found at the top of the accessibility tree.
+- The world_memory describes all task relevant information, it was last updated before action_memory was recorded. world_memory records from oldest to newest.
+- The action_memory is an enumerated list of tuples in the format:
+   - x) Location: Where action was taken
+     x) Effect: Effect of action
+   - Later items in action_memory happened more recently.
+- If the user doesn't give specify specific attributes, use the default the website gives you.
+- If the user's desired item has multiple default attributes, only modify them if the user specifies that you do so in the task.
+- Some actions require inputting text, these are labelled INPUT_TEXT right after their starting number.
+- You can only input text into the web page (and interact with actions with the INPUT_TEXT label at the start) by calling the associated SPECIAL ACTION to call a different assistant agent, and telling it the intention of your input (e.g., input all information for payment) using action_reason.
+- Assume that once you see a piece of information the user wants to retrieve, it's automatically given to the user.
+- Ensure that you fully complete the process of attaining what the user wants (i.e., you must complete the ENTIRE CHECKOUT PROCESS for the order to buy something). Assume that you have access to all the user's personal information.
+
+Answer 1 to 5 of these questions sequentially, giving me your final answer in the format of question 5.

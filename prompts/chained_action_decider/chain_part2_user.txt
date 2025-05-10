@@ -1,0 +1,31 @@
+Here is the current navigation context:
+
+User's initial task:
+<task>
+$task
+</task>
+
+Task notes and helpful user information:
+<task_notes>
+$task_notes
+</task_notes>
+
+Current page's accessibility tree:
+<accessibility_tree>
+$ax_tree
+</accessibility_tree>
+
+Summary of your progress:
+<progress_summary>
+$first_chain_output
+</progress_summary>
+
+Remember:
+- Every standard action in accessibility tree starts with a number
+- You MUST ONLY use WRITE_TEXT MODE for any WRITE_TEXT actions
+- WRITE TEXT MODE is only used for actions with WRITE_TEXT at the start of their line.
+- Do NOT use ASK USER to ask the user how to navigate or use the website
+- You must complete entire processes (e.g., full checkout flow)
+- Focus on immediate next step in action_reason
+- Be thorough in your analysis
+- You must think very hard for every step

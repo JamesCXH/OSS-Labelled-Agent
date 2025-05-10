@@ -1,0 +1,19 @@
+Here's the input data:
+{
+  "old_accessibility_tree": "$old_accessibility_tree",
+  "new_accessibility_tree": "$new_accessibility_tree",
+  "action_number": "$action_number",
+  "intention_for_action": "$reason_for_action",
+  "web_agent_task": "$web_agent_task",
+}
+
+Remember:
+- answer must be very precise and very detailed.
+- answer must describe the actual effect of the chosen_action.
+- answer MUST ONLY include information that is explicitly true. DO NOT HALLUCINATE.
+- Read and make sure you understand the 'definitions and notes' labelled IMPORTANT.
+- We have our own special definition of fail/failed/failure, it's in the definitions and notes section. Make sure that you use this definition to treat base_action_effect as specified.
+- All task-relevant information and effects of the action must be VERY DETAILED and VERY PRECISE.
+
+First, you MUST follow ALL the steps carefully and reason step-by-step.
+Then give your final answer as a JSON object as described above.

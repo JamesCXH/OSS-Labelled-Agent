@@ -1,0 +1,207 @@
+# Dominos Product Knowledge Base
+
+## Specialty Pizzas
+Types:
+- ExtravaganZZa
+- MeatZZa
+- Philly Cheese Steak
+- Pacific Veggie
+- Honolulu Hawaiian
+- Deluxe
+- Cali Chicken Bacon Ranch
+- Buffalo Chicken
+- Ultimate Pepperoni
+- Spinach & Feta
+- Wisconsin 6 Cheese
+- Memphis BBQ Chicken
+
+Fields to specify:
+- Size
+- Crust type
+
+## Regular Pizzas
+Fields to specify:
+- Size
+- Crust type
+
+Crust types:
+- Hand Tossed
+- Gluten Free (small only)
+- Handmade Pan (medium only)
+- Crunchy Thin Crust (medium and large only)
+- New York Style (medium, large, and x-large only)
+
+Sizes:
+- Small (10")
+- Medium (12")
+- Large (14")
+- X-Large (16")
+
+Sauces:
+- Robust Inspired Tomato Sauce
+- Hearty Marinara Sauce
+- Honey BBQ Sauce
+- Garlic Parmesan Sauce
+- Alfredo Sauce
+- Ranch
+- No Sauce
+
+Meats:
+- Ham
+- Beef
+- Salami
+- Premium Chicken
+- Bacon
+- Philly Steak
+- Anchovies
+- Pepperoni
+- Italian Sausage
+
+Non-meats:
+- Hot Buffalo Sauce
+- Pineapple
+- Shredded Provolone Cheese
+- Cheddar Cheese Blend
+- Green Peppers
+- Garlic
+- Jalapeno Peppers
+- Onions
+- Banana Peppers
+- Diced Tomatoes
+- Black Olives
+- Mushrooms
+- Spinach
+- Feta Cheese
+- Shredded Parmesan Asiago
+
+## Chicken Items
+Types:
+- Boneless Chicken
+- Specialty Chicken – Crispy Bacon & Tomato
+- Specialty Chicken – Classic Hot Buffalo
+- Specialty Chicken – Spicy Jalapeno - Pineapple
+- Specialty Chicken – Sweet BBQ Bacon
+- Hot Buffalo Wings
+- Honey BBQ Wings
+- Plain Wings
+- Garlic Parmesan Wings
+- Sweet Mango Habanero Wings
+
+Fields to specify:
+- Type of chicken item
+- Amount (for wings: 8-piece, 16-piece, 32-piece)
+
+## Loaded Tots
+Types:
+- Philly Cheese Steak Loaded Tots
+- Cheddar Bacon Loaded Tots
+- Melty 3-Cheese Loaded Tots
+
+Fields to specify:
+- Type of loaded tots
+- Topping amounts (if customizable)
+
+## Sandwiches
+Types:
+- Buffalo Chicken
+- Chicken Habanero
+- Mediterranean Veggie
+- Philly Cheese Steak
+- Chicken Bacon Ranch
+- Italian
+- Chicken Parm
+
+Fields to specify:
+- Type of sandwich
+
+## Pastas
+Types:
+- Chicken Alfredo
+- Italian Sausage Marinara
+- Chicken Carbonara
+- Pasta Primavera
+- Build Your Own Pasta
+
+Fields to specify:
+- Type of pasta
+- Serving option (dish or bread bowl)
+- Sauce amount (if customizable)
+- Topping amounts
+
+## Breads and Oven-Baked Dips
+Types:
+- Stuffed Cheesy Bread
+- Pepperoni Stuffed Cheesy Bread
+- Spinach & Feta Stuffed Cheesy Bread
+- Bacon & Jalapeno Stuffed Cheesy Bread
+- Parmesan Bread Twists
+- Garlic Bread Twists
+- Parmesan Bread Bites
+- Cinnamon Bread Twists
+- Five Cheese Dip & Bread Twists
+- Cheesy Marinara Dip & Bread Twists
+- Cheesy Marinara Dip
+- Five Cheese Dip
+
+Fields to specify:
+- Type of bread or dip
+
+## Desserts
+Types:
+- Cinnamon Bread Twists
+- Domino's Marbled Cookie Brownie
+- Chocolate Lava Crunch Cakes
+
+Fields to specify:
+- Type of dessert
+
+## Salads
+Types:
+- Classic Garden
+- Chicken Caesar
+
+Fields to specify:
+- Type of salad
+- Dressing choice
+
+## Drinks
+Types:
+- Coca-Cola
+- Coke
+- Diet Coke
+- Sprite
+- Water
+- Fanta
+- Fanta Orange
+
+Fields to specify:
+- Type of drink
+- Size (20oz or 2L, Water only has 20oz option)
+
+## Extras (Dips, Dressings, Donations)
+Types:
+- Cheesy Marinara Dip
+- Five Cheese Dip
+- Hot Buffalo Dip
+- Sweet Mango Habanero Dip
+- Honey BBQ Dip
+- Ranch Dip
+- Blue Cheese Dip
+- Garlic Dip
+- Icing Dip
+- Marinara Dip
+- Caesar Dressing
+- Ranch Dressing
+- Balsamic
+- Donate to St. Jude Children's Hospital
+
+Fields to specify:
+- Type of extra item
+
+## Important Notes
+- Specialty pizzas have default toppings and are not found in the regular pizza builder
+- Gluten Free crust is only available in small size
+- Handmade Pan crust is only available in medium size
+- Crunchy Thin Crust is only available in medium and large sizes
+- New York Style crust is only available in medium, large, and x-large sizes
+- Water is only available in 20oz size

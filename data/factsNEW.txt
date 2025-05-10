@@ -1,0 +1,143 @@
+Specialty pizzas (names): ExtravaganZZa, MeatZZa, Philly Cheese Steak, Pacific Veggie, Honolulu Hawaiian, Deluxe, Cali Chicken Bacon Ranch, Buffalo Chicken, Ultimate Pepperoni, Spinach & Feta, Wisconsin 6 Cheese, Memphis BBQ Chicken
+Specialty pizzas can only be found through the dedicated button for them. The preset for these pizzas cannot be found through the regular pizza builder/crust constructions.
+For specialty pizzas, the most important customization option are its size and crust option.
+Specialty pizzas already have default toppings.
+Only assume something is a specialty pizza if its name or part of its name is mentioned explicitly.
+***
+Chicken items: Boneless Chicken, Specialty Chicken – Crispy Bacon & Tomato, Specialty Chicken – Classic Hot Buffalo, Specialty Chicken – Spicy Jalapeno - Pineapple, Specialty Chicken – Sweet BBQ Bacon, Hot Buffalo Wings, Honey BBQ Wings, Plain Wings, Garlic Parmesan Wings, Sweet Mango Habanero Wings
+***
+Loaded tots (tater tots): Philly Cheese Steak Loaded Tots, Cheddar Bacon Loaded Tots, Melty 3-Cheese Loaded Tots
+***
+Sandwiches: Buffalo Chicken, Chicken Habanero, Mediterranean Veggie, Philly Cheese Steak, Chicken Bacon Ranch, Italian, Chicken Parm
+***
+Pastas: Chicken Alfredo, Italian Sausage Marinara, Chicken Carbonara, Pasta Primavera, Build Your Own Pasta
+***
+Breads and oven-baked dips: Stuffed Cheesy Bread, Pepperoni Stuffed Cheesy Bread, Spinach & Feta Stuffed Cheesy Bread, Bacon & Jalapeno Stuffed Cheesy Bread, Parmesan Bread Twists, Garlic Bread Twists, Parmesan Bread Bites, Cinnamon Bread Twists, Five Cheese Dip & Bread Twists, Cheesy Marinara Dip & Bread Twists, Cheesy Marinara Dip, Five Cheese Dip
+***
+Desserts: Cinnamon Bread Twists, Domino's Marbled Cookie Brownie, Chocolate Lava Crunch Cakes
+***
+Salads: Classic Garden, Chicken Caesar
+***
+Drinks: Coca-Cola, Coke, Diet Coke, Sprite, Water, Fanta, Fanta Orange
+Drinks customization options:
+Amount: 20oz, 2l
+Note: Water only has 20oz option
+***
+Oven Baked Dips (in extras): Cheesy Marinara Dip, Five Cheese Dip
+***
+Dips (in extras): Cheesy Marinara Dip, Five Cheese Dip, Hot Buffalo Dip, Sweet Mango Habanero Dip, Honey BBQ Dip, Ranch Dip, Blue Cheese Dip, Garlic Dip, Icing Dip, Marinara Dip
+***
+Salad Dressing (in extras): Caesar Dressing, Ranch Dressing, Balsamic
+***
+Extras: Cheesy Marinara Dip, Five Cheese Dip, Hot Buffalo Dip, Sweet Mango Habanero Dip, Honey BBQ Dip, Ranch Dip, Blue Cheese Dip, Garlic Dip, Icing Dip, Marinara Dip, Caesar Dressing, Ranch Dressing, Balsamic, Donate to St. Jude Children's Hospital
+***
+Crust types: Hand Tossed, Gluten Free, Handmade Pan, Crunchy Thin Crust, New York Style
+Gluten Free crust type is only available in small size. Handmade pan crust type is only available in medium size. Crunchy thin crust type is only available in medium and large sizes. New york crust type is only available in medium, large, and x-large.
+If the correct size is not selected, then the crust will not be displayed. Each pizza size has it's own crust-options.
+***
+Special instruction attributes for pizzas: Bake (Well Done, Normal Bake), Seasoning (Garlic-Seasoned Crust, No Garlic-Seasoned Crust), Cut (Pie Cut, Square Cut, Uncut)
+***
+All/general pizzas options:
+Size: Small (10"), Medium (12"), Large (14"), X-Large (16")
+Possible Crusts (dependent on size): Hand Tossed, Gluten Free, Handmade Pan, Crunchy Thin Crust, New York Style
+Cheese: Amount (None, Light, Normal, Extra), Placement (Left, Whole, Right)
+Sauce: Robust Inspired Tomato Sauce, Hearty Marinara Sauce, Honey BBQ Sauce, Garlic Parmesan Sauce, Alfredo Sauce, Ranch, No Sauce
+Sauce Amount: Light, Normal, Extra
+Meats: Ham, Beef, Salami, Premium Chicken, Bacon, Philly Steak, Anchovies, Pepperoni, Italian Sausage
+Non-meats: Hot Buffalo Sauce, Pineapple, Shredded Provolone Cheese, Cheddar Cheese Blend, Green Peppers, Garlic, Jalapeno Peppers, Onions, Banana Peppers, Diced Tomatoes, Black Olives, Mushrooms, Spinach, Feta Cheese, Shredded Parmesan Asiago
+Topping Amount: None, Light, Normal, Extra
+Topping Placement: Left, Whole, Right
+Dipping Sauces: Garlic Dipping Cup, Ranch Dipping Cup, Marinara Dipping Cup
+Special Instructions: Bake (Normal Bake, Well Done), Seasoning (Garlic-Seasoned Crust, No Garlic-Seasoned Crust), Cut (Pie Cut, Square Cut)
+***
+Buffalo Chicken Sandwich options:
+Sauces: Blue Cheese Sauce, Hot Buffalo Sauce
+Sauce Amount: None, Light, Normal (default)
+Toppings (default, can only change amount): Cheese, Premium Chicken, Cheddar Cheese Blend, Sliced Provolone, Onions
+Topping Amount: None, Light, Normal (default)
+***
+Chicken Habanero Sandwich options:
+Sauces: Mango Habanero Sauce
+Sauce Amount: None, Light, Normal (default)
+Toppings (default, can only change amount): Cheese, Premium Chicken, Cheddar Cheese Blend, Sliced Provolone, Jalapeno Peppers, Pineapple
+Topping Amount: None, Light, Normal (default)
+***
+Mediterranean Veggie Sandwich options:
+Toppings (default, can only change amount): American Cheese, Feta Cheese, Sliced Provolone, Banana Peppers, Onions, Spinach, Diced Tomatoes
+Topping Amount: None, Light, Normal (default)
+***
+Philly Cheese Steak Sandwich options:
+Toppings (default, can only change amount): Philly Steak, American Cheese, Sliced Provolone, Green Peppers, Mushrooms, Onions
+Topping Amount: None, Light, Normal (default)
+***
+Chicken Bacon Ranch Sandwich options:
+Sauces: Ranch Dressing
+Sauce Amount: None, Light, Normal (default)
+Toppings (default, can only change amount): Cheese, Bacon, Premium Chicken, Sliced Provolone
+Topping Amount: None, Light, Normal (default)
+***
+Italian Sandwich options:
+Toppings (default, can only change amount): Cheese, Pepperoni, Ham, Salami, Sliced Provolone, Banana Peppers, Green Peppers, Onions
+Topping Amount: None, Light, Normal (default)
+***
+Chicken Parm Sandwich options:
+Sauces: Pizza Sauce
+Sauce Amount: None, Light, Normal (default)
+Toppings (default, can only change amount): Cheese, Premium Chicken, Shredded Parmesan Asiago, Sliced Provolone
+Topping Amount: None, Light, Normal (default)
+***
+Salad extras:
+Caesar, Italian, Balsamic, Ranch Dressing
+***
+Chicken Alfredo Pasta options:
+Serving Options: Dish (default), BreadBowl
+Sauces: Alfredo Sauce
+Sauce Amount: Normal (default)
+Toppings (default, can only change amount): Premium Chicken
+Topping Amount: None, Normal (default)
+***
+Italian Sausage Marinara Pasta options:
+Serving Options: Dish (default), BreadBowl
+Sauces: Hearty Marinara Sauce
+Sauce Amount: Normal (default)
+Toppings (default, can only change amount): Italian Sausage, Shredded Provolone Cheese
+Topping Amount: None, Normal (default)
+***
+Chicken Carbonara Pasta options:
+Serving Options: Dish (default), BreadBowl
+Sauces: Alfredo Sauce
+Sauce Amount: Normal (default)
+Toppings (default, can only change amount): Bacon, Premium Chicken, Mushrooms, Onions
+Topping Amount: None, Normal (default)
+***
+Pasta Primavera options:
+Serving Options: Dish (default), BreadBowl
+Sauces: Alfredo Sauce
+Sauce Amount: Normal (default)
+Toppings (default, can only change amount): Mushrooms, Onions, Spinach, Diced Tomatoes
+Topping Amount: None, Normal (default)
+***
+Build Your Own Pasta customization options:
+Serving Options: Dish, BreadBowl
+Sauces: Alfredo Sauce or Hearty Marinara Sauce
+Sauce Amount: Only normal
+Toppings: Pepperoni, Italian Sausage, Beef, Philly Steak, Ham, Bacon, Premium Chicken, Anchovies, Cheese, Cheddar Cheese Blend, Feta Cheese, Shredded Parmesan, Shredded Provolone Cheese, Garlic, Green Peppers, Jalapeno Peppers, Mushrooms, Pineapple, Onions, Black Olives, Spinach, Diced Tomatoes, Banana Peppers
+Topping Amount: None, Normal (default)
+***
+Philly Cheese Steak Loaded Tots options:
+Toppings (default, can only change amount): Cheddar Cheese Blend, Alfredo Sauce, Philly Steak, Green Peppers, Onions
+Topping Amount: None, Normal (default)
+***
+Cheddar Bacon Loaded Tots options:
+Toppings (default, can only change amount): Bacon, Cheddar Cheese Blend, Garlic Parmesan Sauce
+Topping Amount: None, Normal (default)
+***
+Melty 3-Cheese Loaded Tots options:
+Toppings (default, can change amount): Cheddar Cheese Blend, Shredded Provolone Cheese, Alfredo Sauce
+Topping Amount: None, Normal (default)
+***
+All Chicken Wings (boned) customization options:
+Amount: 8-piece, 16-piece, 32-piece
+***
+Boneless Chicken customization options:
+Amount: 8-piece, 16-piece, 32-piece

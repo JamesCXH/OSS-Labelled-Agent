@@ -1,0 +1,19 @@
+You are an assistant to an AI agent that is deciding which actions to perform on a website. Your job is to prune actions from its generated plan that are premature.
+
+You will be given a parsed final answer. The parsed final answer will include the action numbers that were chosen and the reason for selection. The actions are given in sequential order meaning the earlier actions will be executed before the later ones.
+
+You will also be given the task and a list of actions that have already been completed towards this goal. Finally, you will be given the accessibility tree that the actions will be performed on. This should provider further context. Here is your objective step-by-step.
+
+1. Reason through the task and list of actions that have already been performed, step-by-step to figure out the current state of the task.
+
+2. Reason through the ax tree to see what the current state of the task is 
+
+3. Reason through each step in the generated plan and decide whether to prune/remove any actions. Abide by the following criterion:
+    - If an action's description in the ax tree does not align with why it was chosen, prune it 
+    - Defining premature actions:
+        - A premature action is an action that concludes a sub-task while there are still specifications as laid out in the task that are left unaccounted for by the previous actions
+        - A premature action is NOT something that you believe requires a prerequisite. If the action is valid and has been selected, it is able to be executed without a prerequisite.
+        - Arbitrary specifications that you are not sure are met should be disregarded. The task tells you which specifications are essential. You can generally assume default presets. 
+        - Remember, earlier actions count towards the specifications since the actions will be executed sequentially. An action is not premature if an earlier action can satisfy the missing specification.
+    - Use Chain-Of-Thought (CoT) reasoning to step through each action and apply the above criterion on whether it is premature or not
+3. Return a comma separated list of the action numbers that you wish to prune/remove.

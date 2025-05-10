@@ -1,0 +1,42 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="3">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+            <item index="1" class="java.lang.String" itemvalue="3.12" />
+            <item index="2" class="java.lang.String" itemvalue="3.5" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="18">
+            <item index="0" class="java.lang.String" itemvalue="tiktoken" />
+            <item index="1" class="java.lang.String" itemvalue="transformers" />
+            <item index="2" class="java.lang.String" itemvalue="gymnasium" />
+            <item index="3" class="java.lang.String" itemvalue="beartype" />
+            <item index="4" class="java.lang.String" itemvalue="aiolimiter" />
+            <item index="5" class="java.lang.String" itemvalue="nltk" />
+            <item index="6" class="java.lang.String" itemvalue="openai" />
+            <item index="7" class="java.lang.String" itemvalue="playwright" />
+            <item index="8" class="java.lang.String" itemvalue="text-generation" />
+            <item index="9" class="java.lang.String" itemvalue="types-tqdm" />
+            <item index="10" class="java.lang.String" itemvalue="flask" />
+            <item index="11" class="java.lang.String" itemvalue="evaluate" />
+            <item index="12" class="java.lang.String" itemvalue="Pillow" />
+            <item index="13" class="java.lang.String" itemvalue="pytorch-pretrained-bert" />
+            <item index="14" class="java.lang.String" itemvalue="nibabel" />
+            <item index="15" class="java.lang.String" itemvalue="sentence-transformers" />
+            <item index="16" class="java.lang.String" itemvalue="torch" />
+            <item index="17" class="java.lang.String" itemvalue="numpy" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
