@@ -1,5 +1,7 @@
 # Web Agent w/ Action Labelling
 
+## Note that we only provide a finished + labelled scrape for Dominos
+
 ## Development Notes
 
 - Requires Python version 3.10.4
