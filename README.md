@@ -1,6 +1,6 @@
 # Web Agent w/ Action Labelling
 
-## Note that we only provide a finished + labelled scrape for Dominos
+## Note that we only provide a finished + labelled scrape for Domino's
 
 ## Development Notes
 
